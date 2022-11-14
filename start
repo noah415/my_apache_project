@@ -1,0 +1,7 @@
+#!/bin/bash
+echo "Hi! To run this script, you may need sudo privileges to install the Centos Docker image used to run the apache server."
+printf "If there is a prompt, please provide your sudo password below.\n"
+sudo docker build -t noah-apache-server .
+printf "\n\nRunning command to boot up Docker container.\n\n"
+docker run -dp 8080:80 noah-apache-server
+printf "\n\nIf there are no error messages from the build, the Apache server is now running on localhost:8080\n\n"
