@@ -1,46 +1,45 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script type="text/javascript">
+      async function scrollLetter(index) {
+        const final = "Happy Holidays!";
+        let title = document.getElementById("title").innerHTML;
+
+        if (title.length < final.length) {
+          document.getElementById("title").innerHTML = title + final[index];
+          setTimeout(scrollLetter, 80, index+1);
+        }
+
+      }
+    </script>
   </head>
     <style>
       body {
         text-align: center;
         padding: 40px 0;
-        background: #EBF0F5;
+        background: #732626;
+        font-family: 'Montserrat';font-size: 22px;
       }
         h1 {
-          color: #88B04B;
+          color: #cc7a00;
           font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
           font-weight: 900;
-          font-size: 40px;
+          font-size: 80px;
           margin-bottom: 10px;
         }
         p {
-          color: #404F5E;
+          color: #cc7a00;
           font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
-          font-size:20px;
+          font-size:22px;
           margin: 0;
         }
-      i {
-        color: #9ABC66;
-        font-size: 100px;
-        line-height: 200px;
-        margin-left:-15px;
-      }
-      .card {
-        background: white;
-        padding: 60px;
-        border-radius: 4px;
-        box-shadow: 0 2px 3px #C8D0D8;
-        display: inline-block;
-        margin: 0 auto;
-      }
     </style>
-    <body>
-      </div>
-        <h1>Success</h1> 
-        <p>Your webpage is up and running</p>
+    <body onload="scrollLetter(0)">
+      </div class="card">
+        <p>Welcome to Noah Otsuka's Website</p> 
+        <h1 id="title"></h1> 
       </div>
     </body>
 </html>
