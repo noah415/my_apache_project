@@ -1,2 +1,8 @@
 FROM httpd:2.4
 COPY ./src/ /usr/local/apache2/htdocs/
+RUN openssl req -x509 -newkey rsa:4096 -keyout /usr/local/apache2/conf/server.key -out /usr/local/apache2/conf/server.crt -sha256 -days 365 -nodes -subj '/CN=localhost'
+RUN sed -i \
+		-e 's/^#\(Include .*httpd-ssl.conf\)/\1/' \
+		-e 's/^#\(LoadModule .*mod_ssl.so\)/\1/' \
+		-e 's/^#\(LoadModule .*mod_socache_shmcb.so\)/\1/' \
+		conf/httpd.conf
