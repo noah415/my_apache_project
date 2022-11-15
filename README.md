@@ -12,7 +12,7 @@ Run the following command to build and run a Docker container:
 $ ./start
 ```
 
-This Docker container is named noah-apache-server and runs on `localhost port 8080`.
+This Docker container is named noah-apache-server and runs on `localhost port 8080` [https://localhost:8080](https://localhost:8080).
 
 Finally, input localhost:8080 into your browser of choice to receive the html served by the Apache server.
 
