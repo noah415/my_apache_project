@@ -6,8 +6,6 @@
 
 ## Starting the server
 
-
-
 Run the following command to build and run a Docker container:
 
 ```bash
@@ -44,17 +42,17 @@ This run command boots up a Docker container in detatched mode using the flag `-
 
 ### Dockerfile
 
-The `DockerFile` is a file used for configuring the Apache server Docker image. The concept for creating an Apache server is pretty straightforward. All that is needed in the Docker file is to use the httpd Docker image and copy the html from `src/` folder to the `/usr/local/apache2/htdocs/` folder for Apache to serve. 
+The `DockerFile` is a file used for configuring the Apache server Docker image. The concept for creating an Apache server is pretty straightforward. All that is needed in the Docker file is to use the httpd Docker image and copy the html from `src/` folder to the `/usr/local/apache2/htdocs/` folder for Apache to serve. To ensure a secure connection using the https protocol, I run the openssl command to create a self-signed certificate and a private key for Apache to use in a secured connection, and I run a sed command to uncomment the Apache ssl config file. This sed command was taken from the Docker Hub httpd page.
 
 ### src/
 
-The `src/` folder holds all html files to be served by the Apache server (there is only one). 
+The `src/` folder holds all html files to be served by the Apache server (there is only one).
 
 ## Why I chose Apache
 
 Throughout my career, I have heard many people mention Apache, and have always been curious as to what it is, so I saw this project as an opprotunity to get hands on with Apache and learn how it works.
 
-Since most of my experience with web servers has been through Node.js, I was not too familiar with the webserver options presented for the project. I did some reasearch on each server, and found that Apache was the best for its ease of deployment and again my curiosity in the tool. 
+Since most of my experience with web servers has been through Node.js, I was not too familiar with the webserver options presented for the project. I did some reasearch on each server, and found that Apache was the best for its ease of deployment and again my curiosity in the tool.
 
 ## Why I chose Docker
 
